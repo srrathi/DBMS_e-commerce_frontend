@@ -1,0 +1,48 @@
+
+.continue_shopping_btn {
+  border: none;
+  background-color: rgb(240, 251, 255);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  text-decoration: none;
+  color: #090909;
+}
+.remove_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background-color: #b7410e;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border: none;
+}
+.order_summary_cal{
+    background-color: #f0fbff;
+    border-left: 1px solid #787878;
+}
+
+
+.checkout_btn {
+    border-radius: 0 !important;
+    border: none !important;
+    background-color: #090909 !important;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px !important;
+  }
+  
+  .checkout_btn::after {
+    border: none !important;
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px !important;
+  }
+  
+  .checkout_btn:focus,
+  .checkout_btn:active {
+    border: none !important;
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    outline: none !important;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px !important;
+  }
+  
+  .checkout_btn:hover {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px !important;
+  }

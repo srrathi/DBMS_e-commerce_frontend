@@ -1,0 +1,47 @@
+.navbar_main{
+  background: rgb(34,193,195);
+  background: linear-gradient(0deg, rgb(174, 249, 250) 0%, rgba(255,255,255,1) 83%);}
+.cart-icon {
+  color: black;
+}
+.cart-icon:hover {
+  color: rgba(0, 0, 0, 0.7);
+}
+.basket {
+  position: relative;
+  margin-right: 20px;
+}
+.basket span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  right: -25px;
+  top: -40px;
+  width: 25px;
+  height: 25px;
+  background-color: #02aeb4;
+  border-radius: 50%;
+  font-size: 12px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.dropdown-toggle .nav-link {
+  display: none;
+}
+#dropdown-basic::after {
+  display: none;
+}
+.dropdown-toggle .nav-link::after {
+  display: none;
+}
+
+.brand_name {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+
+.brand_name:hover {
+  color: rgba(0, 0, 0, 0.7);
+}
