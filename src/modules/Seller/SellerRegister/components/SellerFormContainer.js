@@ -57,6 +57,7 @@ const SellerFormContainer = () => {
       sellerAddress: `${addressFormatter.address}|${addressFormatter.city}|${addressFormatter.pincode}|${addressFormatter.state}`,
     });
     // console.log(formState);
+    // eslint-disable-next-line 
   }, [
     addressFormatter.state,
     addressFormatter.city,
@@ -91,6 +92,7 @@ const SellerFormContainer = () => {
         checkboxChecked: false,
       });
     }
+    // eslint-disable-next-line 
   }, []);
 
   const handleInputChange = (e) => {
@@ -135,7 +137,6 @@ const SellerFormContainer = () => {
         sellerFirmInfo: formState.sellerFirmInfo,
         sellerAddress: formState.sellerAddress,
         sellerFirmAddress: formState.sellerAddress,
-        sellerPassword: formState.sellerPassword,
         sellerProfilePic: formState.sellerProfilePic,
       };
       axios
@@ -147,7 +148,7 @@ const SellerFormContainer = () => {
             toastSuccess("Seller Successfully Updated");
             window.localStorage.setItem("sellerData", JSON.stringify(data));
             dispatch(UPDATE_SELLER_DETAILS(data));
-          } else if (!response.data.status || response.status == 400) {
+          } else if (!response.data.status || response.status === 400) {
             // console.log(response);
             toastError(response.data.message);
           }
@@ -193,7 +194,6 @@ const SellerFormContainer = () => {
         sellerFirmInfo: formState.sellerFirmInfo,
         sellerAddress: formState.sellerAddress,
         sellerFirmAddress: formState.sellerAddress,
-        sellerPassword: formState.sellerPassword,
         sellerProfilePic: formState.sellerProfilePic,
       };
 

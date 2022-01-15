@@ -26,6 +26,7 @@ const ProductDetails = ({ productId, setProductPic }) => {
   );
   const dispatch = useDispatch();
   const requiredProduct = products.filter(
+    // eslint-disable-next-line 
     (product) => product.product_id == productId
   );
   // console.log(requiredProduct);
@@ -37,6 +38,7 @@ const ProductDetails = ({ productId, setProductPic }) => {
   const addProductToCart = () => {
     if (customerId) {
       const productIndex = cartProducts.findIndex(
+        // eslint-disable-next-line 
         (item) => item.cartProductId == requiredProduct[0].product_id
       );
       // console.log(productIndex);
@@ -73,7 +75,7 @@ const ProductDetails = ({ productId, setProductPic }) => {
 
   useEffect(() => {
     setProductPic(requiredProduct[0].product_pic);
-  }, [productId]);
+  }, [productId, requiredProduct, setProductPic]);
 
   return (
     <div>

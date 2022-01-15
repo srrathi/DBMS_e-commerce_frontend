@@ -19,6 +19,7 @@ const MyProductsPage = () => {
         }
       })
       .catch((error) => console.log(error));
+      // eslint-disable-next-line 
   }, []);
   return (
     <div className="my-4 py-3">

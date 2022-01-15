@@ -6,6 +6,7 @@ const Header = ({ productId, productCategory }) => {
   const products = useSelector((state) => state.ProductsReducer.products);
   const requiredProduct = products.filter((product, index) => {
     // console.log(product);
+    // eslint-disable-next-line 
     return product.product_id == productId;
   });
 

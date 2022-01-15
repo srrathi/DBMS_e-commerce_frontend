@@ -33,7 +33,7 @@ const ShippingAddressForm = ({formState, setFormState}) => {
         zipcode: "",
       });
     }
-  }, [checkbox, customer.customerAddress]);
+  }, [checkbox, customer.customerAddress, setFormState]);
   return (
     <div>
       <Form>

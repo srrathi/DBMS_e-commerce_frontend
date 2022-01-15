@@ -9,7 +9,7 @@ const SameCategoryProducts = ({ productCategory, productId }) => {
   const products = state.products.filter(
     (product) =>
       product.product_category === productCategory &&
-      product.product_id != productId
+      product.product_id !== productId
   );
   return (
     <Container fluid className="mt-5">

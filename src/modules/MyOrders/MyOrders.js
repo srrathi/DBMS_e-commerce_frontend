@@ -20,7 +20,7 @@ const MyOrders = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [customerId, dispatch]);
   return (
     <div className="mt-5 pt-3">
       <MyOrdersWrapper />

@@ -43,6 +43,7 @@ const CustomerFormContainer = () => {
       customerAddress: `${addressFormatter.address}|${addressFormatter.city}|${addressFormatter.pincode}|${addressFormatter.state}`,
     });
     // console.log(formState);
+    // eslint-disable-next-line 
   }, [
     addressFormatter.state,
     addressFormatter.city,
@@ -75,6 +76,7 @@ const CustomerFormContainer = () => {
         checkboxChecked: false,
       });
     }
+    // eslint-disable-next-line 
   }, []);
 
   const handleInputChange = (e) => {

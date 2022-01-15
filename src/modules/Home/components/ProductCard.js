@@ -71,6 +71,7 @@ const ProductCard = ({ product }) => {
     } else {
       imageDimensionsCalculator(dummyImg);
     }
+    // eslint-disable-next-line 
   }, [product.product_pic, resizeWidth]);
 
   useEffect(() => {
@@ -86,7 +87,7 @@ const ProductCard = ({ product }) => {
   const addProductToCart = () => {
     if (customerId) {
       const productIndex = cartProducts.findIndex(
-        (item) => item.cartProductId == product.product_id
+        (item) => item.cartProductId === product.product_id
       );
       // console.log(productIndex);
       if (productIndex >= 0) {

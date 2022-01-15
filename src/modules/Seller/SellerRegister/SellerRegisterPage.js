@@ -1,5 +1,5 @@
 import React from "react";
-import LoginModalButton from "../../Shared/LoginModal/LoginModalButton";
+// import LoginModalButton from "../../Shared/LoginModal/LoginModalButton";
 import SellerFormContainer from "./components/SellerFormContainer";
 
 const SellerRegisterPage = () => {

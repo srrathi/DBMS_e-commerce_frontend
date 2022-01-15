@@ -29,19 +29,19 @@ const FooterComponent = () => {
           </div>
           <ul className="list-inline">
             <li className="list-inline-item">
-              <a href="#">Home</a>
+              <a href="/">Home</a>
             </li>
             <li className="list-inline-item">
-              <a href="#">Services</a>
+              <a href="/">Services</a>
             </li>
             <li className="list-inline-item">
-              <a href="#">About</a>
+              <a href="/">About</a>
             </li>
             <li className="list-inline-item">
-              <a href="#">Terms</a>
+              <a href="/">Terms</a>
             </li>
             <li className="list-inline-item">
-              <a href="#">Privacy Policy</a>
+              <a href="/">Privacy Policy</a>
             </li>
           </ul>
           <p className="copyright text-dark">Apni Dukaan © 2021-22</p>

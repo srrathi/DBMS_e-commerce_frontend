@@ -13,7 +13,7 @@ const TransactionCard = ({ invoiceTranscations, invoiceNumber }) => {
       (item) => (total += item.transcProductPrice * item.transcProductCount)
     );
     setOrderTotal(total);
-  }, []);
+  }, [invoiceTranscations]);
 
   return (
     <Card className="p-3">

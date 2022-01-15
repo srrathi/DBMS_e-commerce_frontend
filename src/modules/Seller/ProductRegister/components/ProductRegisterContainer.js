@@ -69,6 +69,7 @@ const ProductRegisterContainer = ({ productDetails }) => {
         })
         .catch((error) => console.log(error));
     }
+    // eslint-disable-next-line 
   }, []);
 
   const handleProductUpdate = () => {
@@ -91,7 +92,6 @@ const ProductRegisterContainer = ({ productDetails }) => {
         productSellerId: seller.sellerId,
         productCountStock: formState.productCountStock,
         productAbout: formState.productAbout,
-        productSellerId: seller.sellerId,
         productPic: formState.productPic || "",
         productId: formState.productId,
       };
@@ -126,7 +126,6 @@ const ProductRegisterContainer = ({ productDetails }) => {
         productSellerId: seller.sellerId,
         productCountStock: formState.productCountStock,
         productAbout: formState.productAbout,
-        productSellerId: seller.sellerId,
         productPic: formState.productPic || "",
       };
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Navbar, Container, Nav, NavDropdown, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FiShoppingCart } from "react-icons/fi";
@@ -10,22 +10,21 @@ import {
   SHOW_LOGIN_POPUP,
 } from "../../store/actions/CustomerReducerActions";
 import { useHistory } from "react-router-dom";
-import { userLoggedInUtil } from "../../utils/CustomerUtils";
+// import { userLoggedInUtil } from "../../utils/CustomerUtils";
 import { FiLogOut, FiLogIn } from "react-icons/fi";
-import LoginModalButton from "../Shared/LoginModal/LoginModalButton";
 import { CLEAR_SELLER_DATA } from "../../store/actions/SellerReducerActions";
 
 const NavbarComponent = () => {
   const Customer = useSelector((state) => state.CustomerReducer.customer);
   const Seller = useSelector((state) => state.SellerReducer.seller);
   const cartProducts = useSelector((state) => state.CartReducer.cart);
-  const [isUserLoggedIn, setIsUserLoggedIn] = useState();
+  // const [isUserLoggedIn, setIsUserLoggedIn] = useState();
   const history = useHistory();
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    setIsUserLoggedIn(userLoggedInUtil());
-  }, []);
+  // useEffect(() => {
+  //   setIsUserLoggedIn(userLoggedInUtil());
+  // }, []);
 
   const customerDetailsFulfilled = (customer) => {
     const isCustomerSignedIn = Object.keys(customer).length > 0;
