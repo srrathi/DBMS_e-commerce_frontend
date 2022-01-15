@@ -42,7 +42,7 @@ const CustomerFormContainer = () => {
       ...formState,
       customerAddress: `${addressFormatter.address}|${addressFormatter.city}|${addressFormatter.pincode}|${addressFormatter.state}`,
     });
-    console.log(formState);
+    // console.log(formState);
   }, [
     addressFormatter.state,
     addressFormatter.city,
@@ -53,7 +53,7 @@ const CustomerFormContainer = () => {
   useEffect(() => {
     // console.log("IN USEEFEECT");
     if (customer.customerId) {
-      console.log("customer", customer);
+      // console.log("customer", customer);
       const addressArray = customer.customerAddress.split("|");
       setFormState(customer);
       setAddressFormatter({
@@ -111,7 +111,7 @@ const CustomerFormContainer = () => {
       axios
         .patch(`${apiBaseUrl}/api/customer/customer-update`, data)
         .then((response) => {
-          console.log(response);
+          // console.log(response);
           if (response.data.success) {
             delete data.customerPassword;
             toastSuccess("User Successfully Updated");
@@ -148,7 +148,7 @@ const CustomerFormContainer = () => {
       axios
         .post(`${apiBaseUrl}/api/customer/customer-register`, data)
         .then((response) => {
-          console.log(response);
+          // console.log(response);
           if (response.data.success) {
             const loginData = {
               customerEmail: formState.customerEmail,
@@ -194,10 +194,10 @@ const CustomerFormContainer = () => {
         });
     } else if (formState.confirmPassword !== formState.customerPassword) {
       toastError("Password Doesnt Match")
-      console.log("Password Doesnt Match");
+      // console.log("Password Doesnt Match");
     } else {
       toastError("Mandatory fields are Empty")
-      console.log("Mandatory fields are Empty");
+      // console.log("Mandatory fields are Empty");
     }
   };
 

@@ -6,7 +6,7 @@ const ShippingAddressForm = ({formState, setFormState}) => {
   const customer = useSelector((state) => state.CustomerReducer.customer);
   const [checkbox, setCheckbox] = useState(false);
   
-  console.log(customer);
+  // console.log(customer);
 
   const handleInputChange = (e) => {
     setFormState({

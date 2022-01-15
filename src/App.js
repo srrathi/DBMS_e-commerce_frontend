@@ -78,7 +78,7 @@ function App() {
               `${apiBaseUrl}/api/transc/transc-all/${customerData.customerId}`
             )
             .then(function (response) {
-              console.log("RESPONSE", response);
+              // console.log("RESPONSE", response);
               dispatch(SET_PREVIOUS_TRANSACTIONS(response.data.data));
             })
             .catch((err) => console.log(err));
@@ -90,7 +90,7 @@ function App() {
             `${apiBaseUrl}/api/seller/seller-products/${sellerData.sellerId}`
           )
           .then((response) => {
-            console.log(response);
+            // console.log(response);
             if (response.data.success) {
               dispatch(GET_SELLER_PRODUCTS(response.data.data));
             }
@@ -119,7 +119,7 @@ function App() {
             return obj;
           });
           dispatch(SET_ALL_CART_PRODUCTS(updatedCartArray));
-          console.log(updatedCartArray);
+          // console.log(updatedCartArray);
         })
         .catch((err) => console.log(err));
     }
@@ -130,9 +130,11 @@ function App() {
       .get(`${apiBaseUrl}/api/customer/products-list`)
       .then(function (response) {
         dispatch(ADD_PRODUCTS_STORE(response.data.data));
-        console.log(response.data.data);
+        // console.log(response.data.data);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+      });
   }, [dispatch]);
 
   return (

@@ -56,7 +56,7 @@ const SellerFormContainer = () => {
       ...formState,
       sellerAddress: `${addressFormatter.address}|${addressFormatter.city}|${addressFormatter.pincode}|${addressFormatter.state}`,
     });
-    console.log(formState);
+    // console.log(formState);
   }, [
     addressFormatter.state,
     addressFormatter.city,
@@ -67,7 +67,7 @@ const SellerFormContainer = () => {
   useEffect(() => {
     // console.log("IN USEEFEECT");
     if (seller.sellerId) {
-      console.log("seller", seller);
+      // console.log("seller", seller);
       const addressArray = seller.sellerAddress.split("|");
       setFormState(seller);
       setAddressFormatter({
@@ -141,14 +141,14 @@ const SellerFormContainer = () => {
       axios
         .patch(`${apiBaseUrl}/api/seller/seller-update`, data)
         .then((response) => {
-          console.log(response);
+          // console.log(response);
           if (response.data.success) {
             delete data.sellerPassword;
             toastSuccess("Seller Successfully Updated");
             window.localStorage.setItem("sellerData", JSON.stringify(data));
             dispatch(UPDATE_SELLER_DETAILS(data));
           } else if (!response.data.status || response.status == 400) {
-            console.log(response);
+            // console.log(response);
             toastError(response.data.message);
           }
         })
@@ -162,7 +162,7 @@ const SellerFormContainer = () => {
   };
 
   const handleSellerRegister = () => {
-    console.log(formState);
+    // console.log(formState);
     if (
       formState.sellerName !== "" &&
       formState.sellerFirmName !== "" &&
@@ -200,7 +200,7 @@ const SellerFormContainer = () => {
       axios
         .post(`${apiBaseUrl}/api/seller/seller-register`, data)
         .then((response) => {
-          console.log(response);
+          // console.log(response);
           if (response.data.success) {
             const loginData = {
               sellerEmail: formState.sellerEmail,
@@ -250,10 +250,10 @@ const SellerFormContainer = () => {
         });
     } else if (formState.confirmPassword !== formState.sellerPassword) {
       toastError("Password Doesnt Match");
-      console.log("Password Doesnt Match");
+      // console.log("Password Doesnt Match");
     } else {
       toastError("Mandatory fields are Empty");
-      console.log("Mandatory fields are Empty");
+      // console.log("Mandatory fields are Empty");
     }
   };
 
@@ -265,7 +265,7 @@ const SellerFormContainer = () => {
     formData.append("sellerPic", selectedImage);
 
     // Details of the uploaded file
-    console.log(selectedImage);
+    // console.log(selectedImage);
 
     // Request made to the backend api
     // Send formData object

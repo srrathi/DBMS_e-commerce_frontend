@@ -33,8 +33,8 @@ const LoginModalIndex = (props) => {
 
   const handleCustomerSignIn = () => {
     if (formState.email === "" || formState.password === "") {
-      toastError("Mandatory Fields are empty");
-      return console.log("Mandatory Fields are empty");
+      return toastError("Mandatory Fields are empty");
+      // return console.log("Mandatory Fields are empty");
     } else {
       const loginData = {
         customerEmail: formState.email,
@@ -43,7 +43,7 @@ const LoginModalIndex = (props) => {
       axios
         .post(`${apiBaseUrl}/api/customer/customer-login`, loginData)
         .then((loginResponse) => {
-          console.log(loginResponse.data);
+          // console.log(loginResponse.data);
           if (loginResponse.status === 200) {
             const customerData = loginResponse.data.data.customerData;
             const data = {
@@ -64,6 +64,7 @@ const LoginModalIndex = (props) => {
             dispatch(HIDE_LOGIN_POPUP());
             toastSuccess("Customer Successfully Signed In");
             props.onHide();
+            window.location.reload();
           }
         })
         .catch((error) => {
@@ -74,7 +75,9 @@ const LoginModalIndex = (props) => {
 
   const handleSellerSignIn = () => {
     if (formState.email === "" || formState.password === "") {
-      return console.log("Mandatory Fields are empty");
+      toastError("Mandatory Fields are empty");
+      // console.log("Mandatory Fields are empty");
+      return;
     } else {
       const loginData = {
         sellerEmail: formState.email,
@@ -110,6 +113,7 @@ const LoginModalIndex = (props) => {
             dispatch(HIDE_LOGIN_POPUP());
             toastSuccess("Seller Successfully Signed In");
             props.onHide();
+            window.location.reload();
           }
         })
         .catch((error) => {

@@ -37,7 +37,7 @@ const ProductCard = ({ product }) => {
       : dummyImg;
     img.onload = function () {
       // console.log(this);
-      console.log(this.width + "x" + this.height);
+      // console.log(this.width + "x" + this.height);
       imageHeightWidthSetter(this.height, this.width);
     };
   };
@@ -60,7 +60,7 @@ const ProductCard = ({ product }) => {
   const updateWidth = () => {
     const requiredDiv = document.getElementById("product_card");
     if (requiredDiv) {
-      console.log(requiredDiv.clientWidth);
+      // console.log(requiredDiv.clientWidth);
       setResizeWidth(requiredDiv.clientWidth);
     }
   };
@@ -88,10 +88,10 @@ const ProductCard = ({ product }) => {
       const productIndex = cartProducts.findIndex(
         (item) => item.cartProductId == product.product_id
       );
-      console.log(productIndex);
+      // console.log(productIndex);
       if (productIndex >= 0) {
         toastWarning("Product already added in cart");
-        console.log("Product already added in cart");
+        // console.log("Product already added in cart");
         return;
       }
       const cartProductData = {
@@ -106,7 +106,7 @@ const ProductCard = ({ product }) => {
       axios
         .post(`${apiBaseUrl}/api/cart/cart-add`, cartProductData)
         .then((response) => {
-          console.log(response);
+          // console.log(response);
           if (response.status === 200) {
             dispatch(ADD_PRODUCT_CART(cartProductData));
             toastSuccess("Product successfully added into Cart");
@@ -120,7 +120,6 @@ const ProductCard = ({ product }) => {
       return toastError("Please Sign In First");
     }
   };
-
   return (
     <>
       <Card className="my-4" id="product_card">
@@ -129,6 +128,12 @@ const ProductCard = ({ product }) => {
             <Link
               className="text-decoration-none text-dark"
               to={`/category/${product.product_category}/${product.product_id}`}
+              onClick={() => {
+                window.scrollTo({
+                  top: 0,
+                  behavior: "smooth",
+                });
+              }}
             >
               <div
                 style={{

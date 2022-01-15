@@ -14,10 +14,12 @@ const MyOrders = () => {
     axios
       .get(`${apiBaseUrl}/api/transc/transc-all/${customerId}`)
       .then(function (response) {
-        console.log("RESPONSE", response);
+        // console.log("RESPONSE", response);
         dispatch(SET_PREVIOUS_TRANSACTIONS(response.data.data));
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
   return (
     <div className="mt-5 pt-3">

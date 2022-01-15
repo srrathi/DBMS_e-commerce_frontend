@@ -21,6 +21,9 @@ const OrderConfirmationModal = ({
 }) => {
   const products = useSelector((state) => state.ProductsReducer.products);
   var cartProducts = useSelector((state) => state.CartReducer.cart);
+  const cartCustomerId = useSelector(
+    (state) => state.CustomerReducer.customer.customerId
+  );
   const invoiceId = generateRandomInvoiceId();
   const dispatch = useDispatch();
   cartProducts = cartProducts.filter((item) => item.cartPurchased === 0);
@@ -44,17 +47,18 @@ const OrderConfirmationModal = ({
     }
     return transcProduct;
   });
-  console.log(transcProductsArray);
+  // console.log(transcProductsArray);
 
   const handlePlaceOrder = () => {
     if (transcProductsArray.length) {
       const data = {
         transactionProductsArray: transcProductsArray,
+        cartCustomerId: cartCustomerId,
       };
       axios
         .post(`${apiBaseUrl}/api/transc/transc-add`, data)
         .then((response) => {
-          console.log(response);
+          // console.log(response);
           if (response.status === 200) {
             toastSuccess("Your Order is placed successfully");
             dispatch(MAKE_CART_EMPTY());

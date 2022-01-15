@@ -10,7 +10,7 @@ const TranscReducer = (state = initialState, action) => {
         allTransactions.map((item) => item.transc_invoice_number)
       );
       const invoiceIdsArray = Array.from(invoiceIdsSet);
-      console.log(invoiceIdsArray);
+      // console.log(invoiceIdsArray);
 
       const transcData = invoiceIdsArray.map((invoiceId) => {
         var invoiceTranscations = allTransactions.filter(
@@ -36,7 +36,7 @@ const TranscReducer = (state = initialState, action) => {
           invoiceTranscations: invoiceTranscations,
         };
       });
-      console.log(transcData);
+      // console.log(transcData);
       return {
         ...state,
         previousTransactions: transcData.reverse(),

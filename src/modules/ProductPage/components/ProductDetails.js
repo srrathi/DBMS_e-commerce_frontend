@@ -28,7 +28,7 @@ const ProductDetails = ({ productId, setProductPic }) => {
   const requiredProduct = products.filter(
     (product) => product.product_id == productId
   );
-  console.log(requiredProduct);
+  // console.log(requiredProduct);
   const discountCalculator = (price, maxPrice) => {
     const discount = 100 - (price / maxPrice) * 100;
     return Math.round(discount);
@@ -39,10 +39,9 @@ const ProductDetails = ({ productId, setProductPic }) => {
       const productIndex = cartProducts.findIndex(
         (item) => item.cartProductId == requiredProduct[0].product_id
       );
-      console.log(productIndex);
+      // console.log(productIndex);
       if (productIndex >= 0) {
         toastWarning("Product already added in cart");
-        console.log();
         return;
       }
       const cartProductData = {
@@ -57,7 +56,7 @@ const ProductDetails = ({ productId, setProductPic }) => {
       axios
         .post(`${apiBaseUrl}/api/cart/cart-add`, cartProductData)
         .then((response) => {
-          console.log(response);
+          // console.log(response);
           if (response.status === 200) {
             dispatch(ADD_PRODUCT_CART(cartProductData));
             toastSuccess("Product successfully added into Cart");
@@ -67,14 +66,14 @@ const ProductDetails = ({ productId, setProductPic }) => {
         .catch((error) => {
           console.error("There was an error!", error);
         });
-    }else {
+    } else {
       return toastError("Please Sign In First");
     }
   };
 
-  useEffect(()=>{
-    setProductPic(requiredProduct[0].product_pic)
-  },[productId])
+  useEffect(() => {
+    setProductPic(requiredProduct[0].product_pic);
+  }, [productId]);
 
   return (
     <div>

@@ -31,7 +31,7 @@ const AddedProduct = ({ product, index }) => {
         `${apiBaseUrl}/api/cart/cart-remove/${product.cartCustomerId}/${product.cartProductId}`
       )
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         if (response.status === 200) {
           dispatch(DELETE_PRODUCT_CART(product.cartProductId));
           toastSuccess("Product successfully removed from your Cart");
@@ -59,7 +59,7 @@ const AddedProduct = ({ product, index }) => {
       axios
         .patch(`${apiBaseUrl}/api/cart/cart-update`, cartProductData)
         .then((response) => {
-          console.log(response);
+          // console.log(response);
           if (response.status === 200) {
             dispatch(UPDATE_PRODUCT_CART(cartProductData));
             dispatch(REFRESH_CART_PRODUCTS());
@@ -82,7 +82,7 @@ const AddedProduct = ({ product, index }) => {
       axios
         .patch(`${apiBaseUrl}/api/cart/cart-update`, cartProductData)
         .then((response) => {
-          console.log(response);
+          // console.log(response);
           if (response.status === 200) {
             dispatch(UPDATE_PRODUCT_CART(cartProductData));
             dispatch(REFRESH_CART_PRODUCTS());
@@ -133,7 +133,7 @@ const AddedProduct = ({ product, index }) => {
               border: "none",
               fontSize: "20px",
             }}
-            onBlur={() => console.log("Now call the API")}
+            // onBlur={() => console.log("Now call the API")}
             onClick={() => handleProductCountChange("D")}
           >
             <b>-</b>
@@ -151,9 +151,9 @@ const AddedProduct = ({ product, index }) => {
               border: "none",
               fontSize: "20px",
             }}
-            onBlur={() =>
-              console.log("Now call the API", product.cartProductId)
-            }
+            // onBlur={() =>
+            //   console.log("Now call the API", product.cartProductId)
+            // }
             onClick={() => handleProductCountChange("I")}
           >
             <b>+</b>

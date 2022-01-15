@@ -11,7 +11,7 @@ const Cart = () => {
   const customerId = useSelector(
     (state) => state.CustomerReducer.customer.customerId
   );
-  console.log("cartStore", cartStore);
+  // console.log("cartStore", cartStore);
   const dispatch = useDispatch();
   useEffect(() => {
     if (customerId) {
@@ -32,9 +32,11 @@ const Cart = () => {
             return obj;
           });
           dispatch(SET_ALL_CART_PRODUCTS(updatedCartArray));
-          console.log(updatedCartArray);
+          // console.log(updatedCartArray);
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+          console.log(err);
+        });
     }
   }, [cartStore.refreshCart, customerId, dispatch]);
 

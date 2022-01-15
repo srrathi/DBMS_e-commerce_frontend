@@ -13,7 +13,7 @@ const MyProductsPage = () => {
     axios
       .get(`${apiBaseUrl}/api/seller/seller-products/${seller.sellerId}`)
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         if (response.data.success) {
           dispatch(GET_SELLER_PRODUCTS(response.data.data));
         }

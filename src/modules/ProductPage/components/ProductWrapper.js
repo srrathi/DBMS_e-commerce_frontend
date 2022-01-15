@@ -16,7 +16,10 @@ const ProductWrapper = ({ productCategory, productId }) => {
             <ProductImage productPic={productPic} productId={productId} />
           </Col>
           <Col xs={12} sm={12} md={6} lg={6}>
-            <ProductDetails setProductPic={setProductPic} productId={productId} />
+            <ProductDetails
+              setProductPic={setProductPic}
+              productId={productId}
+            />
           </Col>
         </Row>
       </Card>

@@ -1,14 +1,12 @@
-import axios from "axios";
-import React, { useEffect } from "react";
+import React from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
-import { ADD_PRODUCTS_STORE } from "../../../store/actions/ProductReducerActions";
+import { useSelector } from "react-redux";
 import CustomLoader from "../../Shared/CustomLoader/CustomLoader";
 import ProductCard from "./ProductCard";
 
 const ProductsContainer = () => {
   const state = useSelector((state) => state);
-  console.log(state);
+  // console.log(state);
   const products = state.ProductsReducer.products;
 
   return (

@@ -5,12 +5,12 @@ import ProductCard from "../../Home/components/ProductCard";
 
 const ProductsCategoryWrapper = ({ productCategory }) => {
   const state = useSelector((state) => state);
-  console.log(state);
+  // console.log(state);
   const products = state.ProductsReducer.products;
   const categoryProducts = products.filter(
     (product) => product.product_category === productCategory
   );
-  console.log(state);
+  // console.log(state);
   return (
     <Container className="my-5" fluid>
       <Card className="p-3">

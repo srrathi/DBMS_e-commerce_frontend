@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 const Header = ({ productId, productCategory }) => {
   const products = useSelector((state) => state.ProductsReducer.products);
   const requiredProduct = products.filter((product, index) => {
-    console.log(product);
+    // console.log(product);
     return product.product_id == productId;
   });
 

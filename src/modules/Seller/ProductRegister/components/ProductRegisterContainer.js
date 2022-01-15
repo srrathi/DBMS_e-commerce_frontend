@@ -54,7 +54,7 @@ const ProductRegisterContainer = ({ productDetails }) => {
           `${apiBaseUrl}/api/product/product-count-cart/${productDetails.product_id}`
         )
         .then((response) => {
-          console.log(response.data.data[0]["COUNT(*)"]);
+          // console.log(response.data.data[0]["COUNT(*)"]);
           setCartCount(response.data.data[0]["COUNT(*)"]);
         })
         .catch((error) => console.log(error));
@@ -64,7 +64,7 @@ const ProductRegisterContainer = ({ productDetails }) => {
           `${apiBaseUrl}/api/product/product-count-transc/${productDetails.product_id}`
         )
         .then((response) => {
-          console.log(response.data.data[0]["COUNT(*)"]);
+          // console.log(response.data.data[0]["COUNT(*)"]);
           setTranscCount(response.data.data[0]["COUNT(*)"]);
         })
         .catch((error) => console.log(error));
@@ -110,7 +110,7 @@ const ProductRegisterContainer = ({ productDetails }) => {
   };
 
   const handleAddProduct = () => {
-    console.log(formState);
+    // console.log(formState);
     if (
       formState.productName !== "" &&
       formState.productCategory !== "" &&
@@ -133,7 +133,7 @@ const ProductRegisterContainer = ({ productDetails }) => {
       axios
         .post(`${apiBaseUrl}/api/product/product-register`, data)
         .then((response) => {
-          console.log(response);
+          // console.log(response);
           if (response.data.success) {
             toastSuccess("Product Added Successfully");
             history.push("/my-products");
@@ -161,7 +161,7 @@ const ProductRegisterContainer = ({ productDetails }) => {
       formData.append("productPic", selectedImage);
 
       // Details of the uploaded file
-      console.log(selectedImage);
+      // console.log(selectedImage);
 
       // Request made to the backend api
       // Send formData object
@@ -180,7 +180,7 @@ const ProductRegisterContainer = ({ productDetails }) => {
   };
 
   const handleProductDelete = () => {
-    console.log(formState.productId, seller.sellerId);
+    // console.log(formState.productId, seller.sellerId);
     axios
       .delete(
         `${apiBaseUrl}/api/product/product-delete/${seller.sellerId}/${formState.productId}`

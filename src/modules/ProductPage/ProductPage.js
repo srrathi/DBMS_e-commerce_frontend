@@ -7,12 +7,16 @@ const ProductPage = ({ match }) => {
     params: { productCategory, productId },
   } = match;
 
-  console.log({ productCategory, productId });
+  // console.log({ productCategory, productId });
+
 
   return (
     <div className="mt-5 pt-3">
       <ProductWrapper productCategory={productCategory} productId={productId} />
-      <SameCategoryProducts productId={productId} productCategory={productCategory} />
+      <SameCategoryProducts
+        productId={productId}
+        productCategory={productCategory}
+      />
     </div>
   );
 };

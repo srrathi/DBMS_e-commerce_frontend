@@ -5,7 +5,7 @@ import ProductCard from "../../Home/components/ProductCard";
 
 const SameCategoryProducts = ({ productCategory, productId }) => {
   const state = useSelector((state) => state.ProductsReducer);
-  console.log(state);
+  // console.log(state);
   const products = state.products.filter(
     (product) =>
       product.product_category === productCategory &&

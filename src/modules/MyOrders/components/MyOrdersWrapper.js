@@ -8,7 +8,7 @@ const MyOrdersWrapper = () => {
   const previousTransactions = useSelector(
     (state) => state.TranscReducer.previousTransactions
   );
-  console.log(previousTransactions);
+  // console.log(previousTransactions);
 
   return (
     <Card className="py-4 px-2">
