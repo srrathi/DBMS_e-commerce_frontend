@@ -98,7 +98,8 @@ function App() {
           .catch((error) => console.log(error));
       }
     }
-  }, [dispatch]);
+    // eslint-disable-next-line 
+  }, []);
 
   useEffect(() => {
     if (customer.customerID) {
@@ -135,7 +136,8 @@ function App() {
       .catch((err) => {
         console.log(err);
       });
-  }, [dispatch]);
+      // eslint-disable-next-line 
+  }, []);
 
   return (
     <>
